@@ -11,8 +11,8 @@ const saludoAnonimo = function (nombre) {
 saludoAnonimo('Rodolfito');
 
 
-function (nombre) {
+(function (nombre) {
     console.log(nombre);
-}('Rudolf');
+})('Rudolf');
 
 
