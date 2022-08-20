@@ -4,7 +4,7 @@ import { Estudiante } from "./models/estudiante.js";
 CRUD();
 
 async function CRUD(){
-    mongoose.connect("mongodb://localhost:27017/colegio", {
+    mongoose.connect("mongodb+srv://david:BCaUWgWN4CD7ZCIA@cluster0.giykqux.mongodb.net/miNuevaDB?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
