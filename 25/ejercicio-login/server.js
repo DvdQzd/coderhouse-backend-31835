@@ -61,7 +61,7 @@ app.get('/datos', (req, res) => {
         // redireccionar a vista de datos
         res.redirect('static/datos.html');
     } else {
-        res.redirect('/login');
+        res.redirect('static/login.html');
     }
 });
 
