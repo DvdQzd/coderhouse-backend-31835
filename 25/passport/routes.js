@@ -49,7 +49,7 @@ function getLogout(req, res) {
 }
 
 // FAIL ROUTE
-function getFailRoute(req, res) {
+function failRoute(req, res) {
     res.send('404').render('routing-error', {});
 }
 
@@ -62,5 +62,5 @@ module.exports = {
     getFailLogin,
     getFailSignup,
     getLogout,
-    getFailRoute
+    failRoute
 }

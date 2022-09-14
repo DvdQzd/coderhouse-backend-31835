@@ -23,7 +23,9 @@ app.engine('hbs', handlebars.engine({
     defaultLayout: 'index.hbs',
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname + '/views/partials'
-}))
+}));
+
+app.set('view engine', 'hbs');
 
 const isValidPassword = (user, password) => {
     return bCrypt.compareSync(password, user.password);
@@ -115,28 +117,25 @@ app.get('/', routes.getRoot);
 
 // LOGIN
 app.get('/login', routes.getLogin);
+app.post('/login', passport.authenticate('login', {
+    failureRedirect: '/failLogin',
+}), routes.postLogin);
+app.get('/failLogin', routes.getFailLogin);
 
 // SIGNUP
 app.get('/signup', routes.getSignup);
-
-// PROCESS LOGIN
-app.post('/login', passport.authenticate('login', {
-    successRedirect: '/profile',
-    failureRedirect: '/failLogin'
-}));
-
-// PROCESS SIGNUP
 app.post('/signup', passport.authenticate('signup', {
-    successRedirect: '/profile',
     failureRedirect: '/failSignup'
 }));
-
-// GET FAIL LOGIN
-app.get('/failLogin', routes.getFailLogin);
-
-// GET FAIL SIGNUP
 app.get('/failSignup', routes.getFailSignup);
 
+// LOGOUT
+app.get('/logout', routes.getLogout);
+
+// FAIL ROUTE
+app.get('*', routes.failRoute);
+
+// Rutas protegidas
 app.get('/ruta-protegida', checkAuthenticacion, (req, res) => {
     const user = req.user;
     console.log('user logueado: ', user);
