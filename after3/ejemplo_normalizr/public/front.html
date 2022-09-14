@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+    <title>Normalizr</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    const { denormalize, schema } = normalizr;
+
+    const normalizedMessages = {
+        entities: {
+            authors: {
+                'Everett10@yahoo.com': {
+                    email: 'Everett10@yahoo.com',
+                    nombre: 'Sylvia',
+                    apellido: 'Barton',
+                    edad: 69687,
+                    alias: 'Earline.Howe97',
+                    avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1220.jpg'
+                },
+                'Akeem_Ernser@hotmail.com': {
+                    email: 'Akeem_Ernser@hotmail.com',
+                    nombre: 'Kris',
+                    apellido: 'Herman',
+                    edad: 31937,
+                    alias: 'Kay.Jakubowski',
+                    avatar: 'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/674.jpg'
+                }
+            },
+            messages: {
+                'bac5a684-3c53-4b4e-ba37-24ed1a1c1c40': {
+                    _id: 'bac5a684-3c53-4b4e-ba37-24ed1a1c1c40',
+                    author: 'Everett10@yahoo.com',
+                    text: 'Ea nisi iure aut.'
+                },
+                '076731ce-099e-43a7-a104-899762808747': {
+                    _id: '076731ce-099e-43a7-a104-899762808747',
+                    author: 'Everett10@yahoo.com',
+                    text: 'Quo perferendis ut fugiat qui est dolorem autem.'
+                },
+                '56493065-de2c-41d3-b05d-efbdc1e25140': {
+                    _id: '56493065-de2c-41d3-b05d-efbdc1e25140',
+                    author: 'Everett10@yahoo.com',
+                    text: 'Voluptate cupiditate quaerat dignissimos velit atque consequatur nam aut.'
+                },
+                '42b26327-d97e-4aa9-add4-962657dcad1a': {
+                    _id: '42b26327-d97e-4aa9-add4-962657dcad1a',
+                    author: 'Akeem_Ernser@hotmail.com',
+                    text: 'Voluptates omnis asperiores sed voluptatem nemo soluta dolores eum nobis.'
+                },
+                '4351fd5b-ab07-45e6-8477-02e4a094ef20': {
+                    _id: '4351fd5b-ab07-45e6-8477-02e4a094ef20',
+                    author: 'Akeem_Ernser@hotmail.com',
+                    text: 'Hic assumenda numquam autem vel odit.'
+                }
+            }
+        },
+        result: [
+            'bac5a684-3c53-4b4e-ba37-24ed1a1c1c40',
+            '076731ce-099e-43a7-a104-899762808747',
+            '56493065-de2c-41d3-b05d-efbdc1e25140',
+            '42b26327-d97e-4aa9-add4-962657dcad1a',
+            '4351fd5b-ab07-45e6-8477-02e4a094ef20'
+        ]
+    };
+
+    const authorSchema = new schema.Entity('authors', {}, { idAttribute: 'email' });
+
+    const messageSchema = new schema.Entity('messages', {
+        author: authorSchema
+    }, { idAttribute: '_id' });
+
+    const denormalizedMessages = denormalize(normalizedMessages.result, [messageSchema], normalizedMessages.entities);
+
+
+    console.log("objeto normalizado");
+    // print(normalizedMessages);sock
+    console.log(JSON.stringify(normalizedMessages).length);
+
+    console.log("objeto desnormalizado");
+    console.log({ denormalizedMessages });
+    console.log(JSON.stringify(denormalizedMessages).length);
+
+</script>
+
+</html>
