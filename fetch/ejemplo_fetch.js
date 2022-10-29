@@ -10,7 +10,7 @@ async function obtenerPokemon(nombre) {
     return await (await fetch(url)).json();
 }
 
-console.log(await obtenerPokemon('bulbasaur'));
+console.log(await obtenerPokemon('pikachu'));
 
 
 // ejemplo post
