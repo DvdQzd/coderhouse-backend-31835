@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "name": "ejemplo",
+  "version": "1.0.0",
+  "main": "servidor.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
+}

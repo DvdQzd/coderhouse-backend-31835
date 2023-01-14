@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "cliente",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cliente.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

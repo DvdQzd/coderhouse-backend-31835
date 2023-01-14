@@ -1,0 +1,5 @@
+Realizar un servidor simple, que utilice el módulo nativo http de node.js para responder un objeto con la fecha y hora actual, ante un request hacia su ruta raíz. Ej. de respuesta: { FyH: '1/6/2021 15:14:21' }
+
+Mediante un cliente http nativo de node, pedir la fecha y hora al servidor realizado y representarla en consola en formato JSON.
+
+Realizar la misma operación utilizando axios y got

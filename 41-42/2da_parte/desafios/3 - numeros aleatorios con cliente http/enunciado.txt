@@ -1,0 +1,3 @@
+Desarrollar un servidor express en node.js que permita almacenar números aleatorios que ingresan desde la ruta post '/ingreso'. Dichos números persistirán en memoría.
+
+Realizar un cliente http en axios que cada dos segundos envíe un número aleatorio al servidor en la ruta post '/ingreso' y otro cliente http en got que le pida a la ruta get '/egreso' cada 10 segundos la lista completa de números almacenados.
