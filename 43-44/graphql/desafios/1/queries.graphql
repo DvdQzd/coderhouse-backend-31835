@@ -1,0 +1,35 @@
+mutation {
+  createRecordatorio(datos: {
+    titulo: "cena miercoles",
+    descripcion: "cena en casa con amigues, pizza probablemente",
+    timestamp: 1638297671329
+  }) {
+    id
+  }
+}
+
+# {
+#     "query": "mutation { createRecordatorio(datos: { titulo: \"cena miercoles\", descripcion: \"cena en casa con amigues, pizza probablemente\", timestamp: 1638297671329 }) { id }}"
+# }
+
+# {
+#     "query": "mutation createRecordatorio($datos: RecordatorioInput) { createRecordatorio(datos: $datos) { id titulo}}",
+#     "variables": {
+#         "datos": {
+#             "titulo": "rec2 desde TC",
+#             "descripcion": "probando graphql desde thunder client 2",
+#             "timestamp": 1638297675000
+#         }
+#     }
+# }
+
+query {
+  getRecordatorios {
+    id
+    titulo
+    descripcion
+    timestamp
+  }
+}
+
+# "query { getRecordatorios { id titulo descripcion timestamp }}"

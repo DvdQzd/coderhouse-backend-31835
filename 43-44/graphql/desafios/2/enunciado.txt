@@ -1,0 +1,5 @@
+Continuando con el desafío anterior, agregar lo necesario para que nuestro servidor soporte también las siguientes operaciones:
+Marcar un recordatorio como leído
+Eliminar todos los recordatorios marcados como leídos
+Verificar el correcto funcionamiento del servidor utilizando la herramienta GraphiQL
+

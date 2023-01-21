@@ -1,0 +1,8 @@
+Crear un servidor basado en GraphQL que me permita administrar recordatorios.
+El mismo deberá permitirme realizar las siguientes operaciones:
+Agregar un recordatorio
+Ver todos los recordatorios
+Un recordatorio está compuesto por un título, una descripción, y un timestamp del momento en que fue creado.
+Verificar el correcto funcionamiento del servidor utilizando un script con fetch desde el navegador (se puede usar el ejemplo de clase).
+No es necesario realizar un servidor en capas, y se puede mantener la persistencia en memoria para simplificar el desafío y concentrarse en la parte de GraphQL. 
+
