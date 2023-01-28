@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div id="content">
+    </div>
+  </div>
+  <div>
+    <button type="button" onclick="load()"> <span> cargar alumnos </span> </button>
+  </div>
+  <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io('http://localhost:8080');
+    socket.on('alumnos', function (data) {
+      const content = document.getElementById('content')
+      content.innerHTML = ""
+      for (const datum of data) {
+        const html = document.createElement('p')
+        html.innerHTML = `alumno: <span>${JSON.stringify(datum)}</span>`
+        content.appendChild(html)
+      }
+    });
+    function load() {
+      socket.emit('alumnos');
+    }
+  </script>
+</body>
+</html>

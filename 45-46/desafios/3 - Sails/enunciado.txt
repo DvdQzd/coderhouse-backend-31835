@@ -1,0 +1,18 @@
+Crear un proyecto backend basado en el framework Sails para realizar consultas y almacenamiento de peliculas por nombre, género y año de estreno. El sistema de persistencia será el default del framework (sistema de archivos)
+
+Estableceremos las rutas API Rest (Blueprint) para poder:
+- listar todas y cada una de las películas por su id
+- incorporar una película
+- Actualizar una película por su id
+- Borrar una película por su id
+
+Dichos request serán realizados mediante postman, comprobando que todos las funciones trabajen correctamente.
+
+Luego, probar la API Rest a través de requests get que nos permiten las rutas blueprint de Sails utilizando los parámetros:
+- /find
+- /find/:id
+- /create?nombre=...&genero=...&anio=...
+- /update/:id?nombre=...&genero=...&anio=...
+- /destroy/:id
+
+Reiniciar el servidor y verificar la persistencia de los datos.
